@@ -11,7 +11,7 @@ app.post('/api/generate-ukhana', async (req, res) => {
   try {
     const { yourName, partnerName, selectedType } = req.body;
     console.log('Request received:', { yourName, partnerName, selectedType });
-    console.log('API Key:', process.env.ANTHROPIC_API_KEY ? 'Present' : 'Missing');
+  
 
     const requestBody = {
       model: "claude-3-opus-20240229",
@@ -70,6 +70,6 @@ Create one unique ukhana in Devanagari maintaining the same rhythm, cultural dep
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log('Environment check - API Key:', process.env.ANTHROPIC_API_KEY ? 'Present' : 'Missing');
+  
   // Generate a unique Marathi ukhana (wedding riddle) of type ${selectedType} using the names ${yourName} and ${partnerName}. The ukhana should maintain traditional Marathi poetic structure with rhyming elements and should not match any common existing ukhanas. Make it creative and meaningful while keeping the cultural context. Return only the ukhana text in Devanagari script, nothing else.
 });
